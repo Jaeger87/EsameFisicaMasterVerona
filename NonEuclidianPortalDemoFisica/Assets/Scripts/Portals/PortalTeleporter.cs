@@ -22,6 +22,7 @@ public class PortalTeleporter : MonoBehaviour {
 			if (dotProduct < 0f)
 			{
 				// Teleport him!
+				player.GetComponent<FirstPersonController>().enabled = false;
 				float rotationDiff = -Quaternion.Angle(transform.rotation, reciever.rotation);
 				rotationDiff += 180;
 				//playerController.rotateByTeleporter(rotationDiff);
@@ -34,6 +35,7 @@ public class PortalTeleporter : MonoBehaviour {
 				player.position = reciever.position + positionOffset;
 
 				playerIsOverlapping = false;
+				
 			}
 		}
 	}
@@ -51,6 +53,7 @@ public class PortalTeleporter : MonoBehaviour {
 		if (other.tag == "Player")
 		{
 			playerIsOverlapping = false;
+			other.GetComponent<FirstPersonController>().enabled = true;
 		}
 	}
 }
