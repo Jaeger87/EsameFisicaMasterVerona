@@ -49,4 +49,20 @@ public class SphereButton : MonoBehaviour
         pressed = true;
         buttonManager.startEnigma();
     }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            inArea = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            inArea = false;
+        }
+    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SphereButtonManager : MonoBehaviour
 {
-    private const float timeEnigma = 19.0f;
+    [SerializeField]private float timeEnigma = 10.0f;
     private bool enigmaStarted = false;
     private float timeRemaning;
     private bool enigmaEnded;
