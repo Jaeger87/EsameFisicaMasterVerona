@@ -34,7 +34,18 @@ public class MagicBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collisione");
+        if (collision.gameObject.tag == "Floor")
+        {
+            m_Rigidbody.isKinematic = true;
+            m_Rigidbody.useGravity = false;
+            m_Collider.isTrigger = true;
+            m_Collider.radius = 2f;
+            flying = false;
+            Vector3 landingPosition = transform.position;
+            Vector3 newPosition = new Vector3(landingPosition.x, 2, landingPosition.z);
+            transform.position = newPosition;
+
+        }
     }
 
     public bool isFlying()
