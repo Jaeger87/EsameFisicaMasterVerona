@@ -57,6 +57,7 @@ public class PortalTeleporter : MonoBehaviour {
 					rotationDiff += 180;
 
 					rotationDiff = firstCamera ? rotationDiff : -rotationDiff;
+					mb.transform.Rotate(Vector3.up, rotationDiff);
 					
 					Rigidbody mbRigidBody = mb.GetComponent<Rigidbody>();
 
