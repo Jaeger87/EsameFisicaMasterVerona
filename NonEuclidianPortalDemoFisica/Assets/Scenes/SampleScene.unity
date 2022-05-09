@@ -555,7 +555,7 @@ GameObject:
   - component: {fileID: 221843280}
   - component: {fileID: 221843279}
   m_Layer: 0
-  m_Name: Eden
+  m_Name: EdenFloor
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
