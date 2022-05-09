@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class RoomTarget : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject exit;
+    [SerializeField] private AudioSource openDoorSound;
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.tag == "Item")
+        {
+            exit.SetActive(true);
+            openDoorSound.Play(0);
+        }
     }
 }
